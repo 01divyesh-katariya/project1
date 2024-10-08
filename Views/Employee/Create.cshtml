@@ -1,0 +1,23 @@
+﻿@model project1.Models.Employee
+
+<h2>Create Employee</h2>
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Position"></label>
+        <input asp-for="Position" />
+    </div>
+    <div>
+        <label asp-for="Department"></label>
+        <input asp-for="Department" />
+    </div>
+    <div>
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary" />
+    </div>
+    <button type="submit">Save</button>
+</form>
