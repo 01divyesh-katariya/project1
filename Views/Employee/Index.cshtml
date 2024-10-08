@@ -1,32 +1,36 @@
 ﻿@model IEnumerable<project1.Models.Employee>
 
-<h2>Employee List</h2>
+<h2 class="text-center my-4">Employee List</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Department</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var employee in Model)
-        {
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="thead-dark">
             <tr>
-                <td>@employee.Name</td>
-                <td>@employee.Position</td>
-                <td>@employee.Department</td>
-                <td>@employee.Salary</td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = employee.EmployeeId })">Edit</a> |
-                    <a href="@Url.Action("Delete", new { id = employee.EmployeeId })">Delete</a>
-                </td>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Position</td>
+                    <td>@employee.Department</td>
+                    <td>@employee.Salary.ToString("C")</td> <!-- Format salary as currency -->
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = employee.EmployeeId })" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="@Url.Action("Delete", new { id = employee.EmployeeId })" class="btn btn-sm btn-danger ml-2">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
-<a href="@Url.Action("Create")" class="btn btn-primary">Add Employee</a>
+<div class="text-right">
+    <a href="@Url.Action("Create")" class="btn btn-primary">Add Employee</a>
+</div>

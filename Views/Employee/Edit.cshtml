@@ -1,24 +1,32 @@
 ﻿@model project1.Models.Employee
 
-<h2>Edit Employee</h2>
+<h2 class="text-center my-4">Edit Employee</h2>
 
-<form asp-action="Edit">
+<form asp-action="Edit" class="container">
     <input type="hidden" asp-for="EmployeeId" />
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
     </div>
-    <div>
-        <label asp-for="Position"></label>
-        <input asp-for="Position" />
+
+    <div class="form-group">
+        <label asp-for="Position" class="form-label"></label>
+        <input asp-for="Position" class="form-control" />
     </div>
-    <div>
-        <label asp-for="Department"></label>
-        <input asp-for="Department" />
+
+    <div class="form-group">
+        <label asp-for="Department" class="form-label"></label>
+        <input asp-for="Department" class="form-control" />
     </div>
-    <div>
-        <label asp-for="Salary"></label>
-        <input asp-for="Salary" />
+
+    <div class="form-group">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
     </div>
-    <button type="submit">Update</button>
+
+    <div class="text-right">
+        <button type="submit" class="btn btn-success">Update</button>
+        <a href="@Url.Action("Index", "Employee")" class="btn btn-secondary ml-2">Cancel</a>
+    </div>
 </form>
